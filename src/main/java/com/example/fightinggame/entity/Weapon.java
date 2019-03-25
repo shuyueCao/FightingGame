@@ -15,5 +15,5 @@ public abstract class Weapon {
 
     public abstract String introduction();
 
-    public abstract void Attack();
+    public abstract int calculateDPS();
 }

@@ -24,7 +24,8 @@ public class Warblade extends Weapon {
     }
 
     @Override
-    public void Attack() {
-
+    public int calculateDPS() {
+        return 0;
     }
+
 }
