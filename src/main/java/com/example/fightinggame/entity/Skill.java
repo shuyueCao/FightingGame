@@ -11,8 +11,9 @@ public class Skill {
     private String name;
     private String description;
     private int id;
-    private static int level = 0;
+    private static int level = 1;
     private static int dps = 10;
+
     public Skill(String name, String description, int id) {
         this.name = name;
         this.description = description;
