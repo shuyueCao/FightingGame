@@ -1,4 +1,4 @@
-package com.example.fightinggame.entity;
+package entity;
 
 /**
  * created by csy on 2019/3/25

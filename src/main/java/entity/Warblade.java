@@ -1,4 +1,4 @@
-package com.example.fightinggame.entity;
+package entity;
 
 import lombok.Data;
 
