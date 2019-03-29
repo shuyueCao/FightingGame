@@ -1,5 +1,7 @@
 package entity;
 
+import entity.equip.Equipment;
+import entity.weapon.Weapon;
 import lombok.Data;
 
 import java.util.List;

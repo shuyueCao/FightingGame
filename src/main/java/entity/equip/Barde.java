@@ -1,9 +1,12 @@
-package entity;
+package entity.equip;
+
+import lombok.Data;
 
 /**
  * created by csy on 2019/3/25
  **/
-public class Barde extends Equipment{
+@Data
+public class Barde extends Equipment {
 
     public Barde(){
         this.name = "反伤刺甲";
@@ -12,8 +15,11 @@ public class Barde extends Equipment{
         this.HP = 10;
     }
 
-    @Override
-    public String introduction() {
-        return "慢点锤...";
+    public int calculateDefense() {
+        return this.defense;
+    }
+
+    public int calculateHP() {
+        return this.HP;
     }
 }

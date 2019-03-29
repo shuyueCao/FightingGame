@@ -1,8 +1,11 @@
-package entity;
+package entity.equip;
+
+import lombok.Data;
 
 /**
  * created by csy on 2019/3/25
  **/
+@Data
 public class Cloak extends Equipment {
 
     public Cloak(){
@@ -12,8 +15,12 @@ public class Cloak extends Equipment {
         this.HP = 20;
     }
 
-    @Override
-    public String introduction() {
-        return "烧就完事了";
+
+    public int calculateDefense() {
+        return this.defense;
+    }
+
+    public int calculateHP() {
+        return this.HP;
     }
 }
