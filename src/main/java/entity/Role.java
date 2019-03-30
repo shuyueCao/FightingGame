@@ -1,10 +1,15 @@
 package entity;
 
 import entity.equip.Equipment;
+import entity.skill.AbstractSkill1;
+import entity.skill.AbstractSkill2;
+import entity.skill.AbstractSkill3;
 import entity.weapon.Weapon;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  *
@@ -12,7 +17,7 @@ import java.util.List;
  * @Date 2019/3/24.
  */
 @Data
-public abstract class Role {
+public abstract class Role extends Observable {
 
     protected String name;
     protected Integer defendValue;
@@ -28,8 +33,21 @@ public abstract class Role {
     //最多携带3件装备
     protected List<Equipment> equipmentList;
     //三个技能
-    protected Skill skill1;
-    protected Skill skill2;
-    protected Skill skill3;
+    protected AbstractSkill1 skill1;
+    protected AbstractSkill2 skill2;
+    protected AbstractSkill3 skill3;
+
+
+    public int attackBySkill1(){
+        return skill1.getDps();
+    }
+
+    public int attackBySkill2(){
+        return skill2.getDps();
+    }
+
+    public int attackBySkill3(){
+        return skill3.getDps();
+    }
 
 }
