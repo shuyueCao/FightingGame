@@ -1,6 +1,7 @@
 package entity.role;
 
 import entity.Role;
+import entity.weapon.Warblade;
 import lombok.Data;
 
 /**
@@ -12,9 +13,11 @@ import lombok.Data;
 public class LiBai extends Role {
 
     public LiBai() {
+        this.name = "李白";
         this.attackValue = 120;
         this.defendValue = 100;
         this.HP = 100;
         this.currentHP = 100;
+        this.weapon = new Warblade();
     }
 }

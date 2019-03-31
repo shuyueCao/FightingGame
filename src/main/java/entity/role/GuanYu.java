@@ -1,6 +1,7 @@
 package entity.role;
 
 import entity.Role;
+import entity.weapon.Bow;
 import lombok.Data;
 
 /**
@@ -12,9 +13,11 @@ import lombok.Data;
 public class GuanYu extends Role {
 
     public GuanYu() {
+        this.name = "关羽";
         this.attackValue = 150;
         this.defendValue = 70;
         this.HP = 150;
         this.currentHP = 150;
+        this.weapon = new Bow();
     }
 }

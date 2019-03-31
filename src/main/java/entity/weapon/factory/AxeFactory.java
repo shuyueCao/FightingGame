@@ -1,7 +1,7 @@
 package entity.weapon.factory;
 
 import entity.weapon.Axe;
-import entity.weapon.Weapon;
+import entity.Weapon;
 
 /**
  * created by csy on 2019/3/29

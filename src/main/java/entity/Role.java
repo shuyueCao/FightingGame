@@ -4,12 +4,11 @@ import entity.equip.Equipment;
 import entity.skill.AbstractSkill1;
 import entity.skill.AbstractSkill2;
 import entity.skill.AbstractSkill3;
-import entity.weapon.Weapon;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
-import java.util.Observer;
 
 /**
  *
@@ -31,7 +30,7 @@ public abstract class Role extends Observable {
     //只可携带一件武器
     protected Weapon weapon;
     //最多携带3件装备
-    protected List<Equipment> equipmentList;
+    protected List<Equipment> equipmentList = new ArrayList<Equipment>();
     //三个技能
     protected AbstractSkill1 skill1;
     protected AbstractSkill2 skill2;

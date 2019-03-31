@@ -1,6 +1,7 @@
 package entity.role;
 
 import entity.Role;
+import entity.weapon.Sword;
 import lombok.Data;
 
 /**
@@ -12,10 +13,12 @@ import lombok.Data;
 public class DiaoChan extends Role{
 
     public DiaoChan() {
+        this.name = "貂蝉";
         this.attackValue = 80;
         this.defendValue = 130;
         this.HP = 100;
         this.currentHP = 100;
+        this.weapon = new Sword();
     }
 
 }

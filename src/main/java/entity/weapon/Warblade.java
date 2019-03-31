@@ -1,5 +1,6 @@
 package entity.weapon;
 
+import entity.Weapon;
 import lombok.Data;
 
 /**
@@ -11,8 +12,9 @@ public class Warblade extends Weapon {
 
     public Warblade(){
         this.name="无尽战刃";
-        this.description="有一定的概率产生暴击";
+        this.description="有一定的概率产生暴击, 造成20点伤害";
         this.power=20;
+        this.money = 200;
     }
 
     @Override

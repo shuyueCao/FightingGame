@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.String?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StartController">
+   <children>
+      <Button id="start" layoutX="157.0" layoutY="204.0" mnemonicParsing="false" onAction="#handleStart" text="进入游戏" />
+      <Button id="exit" layoutX="336.0" layoutY="204.0" mnemonicParsing="false" onAction="#handleExit" prefHeight="27.0" prefWidth="70.0" text="退出游戏" />
+      <Label layoutX="157.0" layoutY="123.0" text="选择角色" />
+      <AnchorPane fx:id="role" layoutX="296.0" layoutY="118.0" prefHeight="27.0" prefWidth="140.0">
+         <children>
+            <ChoiceBox fx:id="roles" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

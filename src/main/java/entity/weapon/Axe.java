@@ -1,5 +1,6 @@
 package entity.weapon;
 
+import entity.Weapon;
 import lombok.Data;
 
 /**
@@ -11,9 +12,9 @@ public class Axe extends Weapon {
 
     public Axe(){
         this.name="暗影战斧";
-        this.description = "有一定几率降低敌人移动速度";
-        this.power=10;
-
+        this.description = "有一定几率降低敌人移动速度, 造成50点伤害";
+        this.power=50;
+        this.money = 500;
     }
 
 

@@ -1,4 +1,4 @@
-package entity.weapon;
+package entity;
 
 import lombok.Data;
 
@@ -11,6 +11,8 @@ public abstract class Weapon {
     protected String name;
     protected String description;
     protected int power;
+    protected int money;
+    protected int level = 1;
 
 
     public abstract int calculateDPS();
@@ -18,4 +20,5 @@ public abstract class Weapon {
     public void enhancePower(int power) {
         this.power += power;
     }
+
 }
