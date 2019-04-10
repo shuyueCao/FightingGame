@@ -22,6 +22,6 @@ public class DiaoChanSkill3 extends AbstractSkill3 {
 
     public void update(Observable o, Object arg) {
         this.level++;
-        this.dps += 5;
+        this.dps += 10;
     }
 }

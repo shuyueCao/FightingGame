@@ -1,5 +1,8 @@
 package entity.role;
 
+import entity.skill.concreteskill.LiBaiSkill1;
+import entity.skill.concreteskill.LiBaiSkill2;
+import entity.skill.concreteskill.LiBaiSkill3;
 import entity.weapon.Warblade;
 import lombok.Data;
 
@@ -18,5 +21,9 @@ public class LiBai extends Role {
         this.HP = 100;
         this.currentHP = 100;
         this.weapon = new Warblade();
+        this.skill1 = new LiBaiSkill1();
+        this.addObserver(skill1);
+        this.abstractSkill2 = new LiBaiSkill2();
+        this.abstractSkill3 = new LiBaiSkill3();
     }
 }
