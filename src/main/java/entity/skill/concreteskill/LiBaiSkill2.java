@@ -18,7 +18,7 @@ public class LiBaiSkill2 extends AbstractSkill2 {
     }
 
     public void update(Observable o, Object arg) {
-
-
+        this.level++;
+        this.dps += 5;
     }
 }

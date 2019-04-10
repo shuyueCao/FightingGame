@@ -1,6 +1,8 @@
 package entity;
 
 import entity.equip.Equipment;
+import entity.role.levelup.ConcreteLevelUpStrategy;
+import entity.role.levelup.LevelUpStrategy;
 import entity.skill.AbstractSkill1;
 import entity.skill.AbstractSkill2;
 import entity.skill.AbstractSkill3;
@@ -34,6 +36,17 @@ public abstract class Role extends Observable {
     protected AbstractSkill1 skill1;
     protected AbstractSkill2 skill2;
     protected AbstractSkill3 skill3;
+
+    //未解锁技能
+    protected AbstractSkill2 abstractSkill2;
+    protected AbstractSkill3 abstractSkill3;
+
+    //升级策略
+    private LevelUpStrategy levelUpStrategy;
+
+    public Role(){
+        this.levelUpStrategy = new ConcreteLevelUpStrategy();
+    }
 
 
     public int attackBySkill1() {

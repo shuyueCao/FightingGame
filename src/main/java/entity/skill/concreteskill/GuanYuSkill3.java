@@ -17,6 +17,7 @@ public class GuanYuSkill3 extends AbstractSkill3 {
     }
 
     public void update(Observable o, Object arg) {
-
+        this.level++;
+        this.dps += 10;
     }
 }
