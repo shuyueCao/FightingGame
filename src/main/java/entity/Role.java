@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Observable;
 
 /**
- *
  * @author phoebegl
  * @Date 2019/3/24.
  */
@@ -37,16 +36,27 @@ public abstract class Role extends Observable {
     protected AbstractSkill3 skill3;
 
 
-    public int attackBySkill1(){
-        return skill1.getDps();
+    public int attackBySkill1() {
+        return skill1.getDps() + this.calculateDPS();
     }
 
-    public int attackBySkill2(){
-        return skill2.getDps();
+    public int attackBySkill2() {
+        if (skill2 == null) {
+            return 0;
+        }
+        return skill2.getDps() + this.calculateDPS();
     }
 
-    public int attackBySkill3(){
-        return skill3.getDps();
+    public int attackBySkill3() {
+        if (skill3 == null) {
+            return 0;
+        }
+        return skill3.getDps() + this.calculateDPS();
+    }
+
+    public int calculateDPS() {
+        int weaponPower = this.weapon == null ? 0 : this.weapon.getPower();
+        return this.attackValue + weaponPower;
     }
 
 }
