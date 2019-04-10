@@ -1,6 +1,6 @@
 package entity.role.levelup;
 
-import entity.Role;
+import entity.role.Role;
 
 /**
  * @author phoebegl
@@ -8,8 +8,12 @@ import entity.Role;
  */
 public class ConcreteLevelUpStrategy implements LevelUpStrategy {
 
-    public void upgrate(Role role, Integer increExp) {
+    public void upgrade(Role role, Integer increExp) {
+        role.setExperience(role.getExperience()+increExp);
 
+        while (role.getExperience() >= getNeededExp(role.getLevel())) {
+            role.setLevel(role.getLevel()+1);
+        }
     }
 
 

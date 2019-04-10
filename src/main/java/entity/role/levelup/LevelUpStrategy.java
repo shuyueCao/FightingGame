@@ -1,6 +1,6 @@
 package entity.role.levelup;
 
-import entity.Role;
+import entity.role.Role;
 
 /**
  * @author phoebegl
@@ -8,5 +8,5 @@ import entity.Role;
  */
 public interface LevelUpStrategy {
 
-    void upgrate(Role role, Integer increExp);
+    void upgrade(Role role, Integer increExp);
 }

@@ -1,6 +1,6 @@
 package entity.skill;
 
-import entity.Role;
+import entity.role.Role;
 
 /**
  * created by csy on 2019/3/30

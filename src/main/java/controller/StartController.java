@@ -1,7 +1,7 @@
 package controller;
 
 import com.sun.javafx.robot.impl.FXRobotHelper;
-import entity.Role;
+import entity.role.Role;
 import factory.RoleFactory;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;

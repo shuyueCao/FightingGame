@@ -1,5 +1,6 @@
-package entity;
+package entity.role;
 
+import entity.Weapon;
 import entity.equip.Equipment;
 import entity.skill.AbstractSkill1;
 import entity.skill.AbstractSkill2;

@@ -1,6 +1,5 @@
 package entity.role;
 
-import entity.Role;
 import entity.weapon.Warblade;
 import lombok.Data;
 
