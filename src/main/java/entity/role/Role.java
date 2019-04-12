@@ -1,6 +1,6 @@
 package entity.role;
 
-import entity.Weapon;
+import entity.weapon.Weapon;
 import entity.equip.Equipment;
 import entity.role.levelup.ConcreteLevelUpStrategy;
 import entity.role.levelup.LevelUpStrategy;

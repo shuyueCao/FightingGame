@@ -11,7 +11,7 @@ public class RedGem extends GemDecorator {
 
     private Equipment equipment;
 
-    private RedGem(Equipment equipment) {
+    public RedGem(Equipment equipment) {
         this.equipment = equipment;
         this.defense = 10;
         this.HP = 10;

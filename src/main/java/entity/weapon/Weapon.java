@@ -1,4 +1,4 @@
-package entity;
+package entity.weapon;
 
 import lombok.Data;
 

@@ -1,6 +1,5 @@
 package entity.weapon;
 
-import entity.Weapon;
 import lombok.Data;
 
 /**

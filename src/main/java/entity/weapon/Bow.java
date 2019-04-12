@@ -1,7 +1,5 @@
 package entity.weapon;
 
-import entity.Weapon;
-
 /**
  * @author phoebegl
  * @Date 2019/3/30.
