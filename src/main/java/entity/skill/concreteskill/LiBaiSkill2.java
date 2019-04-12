@@ -1,6 +1,7 @@
 package entity.skill.concreteskill;
 
 import entity.skill.AbstractSkill2;
+import lombok.Data;
 
 import java.awt.geom.Line2D;
 import java.util.Observable;
@@ -8,6 +9,7 @@ import java.util.Observable;
 /**
  * created by csy on 2019/4/10
  **/
+@Data
 public class LiBaiSkill2 extends AbstractSkill2 {
 
     public LiBaiSkill2(){

@@ -12,6 +12,7 @@ public abstract class Equipment {
     protected String description;
     protected int defense;
     protected int HP;
+    protected int money;
 
     /**
      * 计算防御值

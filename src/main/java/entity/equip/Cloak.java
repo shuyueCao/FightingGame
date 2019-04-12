@@ -13,6 +13,7 @@ public class Cloak extends Equipment {
         this.description = "可以对周围的敌人有持续灼烧效果";
         this.defense = 10;
         this.HP = 20;
+        this.money = 300;
     }
 
 

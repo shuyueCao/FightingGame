@@ -8,12 +8,12 @@ import entity.equip.Equipment;
 public class BlueGem extends GemDecorator {
     private Equipment equipment;
 
-
     public BlueGem(Equipment equipment) {
         this.equipment = equipment;
         this.defense = 20;
         this.HP = 20;
         this.description = "蓝宝石";
+        this.money = 100;
     }
 
     public int calculateDefense() {

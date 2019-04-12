@@ -2,12 +2,14 @@ package entity.skill.concreteskill;
 
 import com.sun.javaws.jnl.LibraryDesc;
 import entity.skill.AbstractSkill1;
+import lombok.Data;
 
 import java.util.Observable;
 
 /**
  * created by csy on 2019/4/10
  **/
+@Data
 public class LiBaiSkill1 extends AbstractSkill1 {
 
     public LiBaiSkill1(){

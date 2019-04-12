@@ -1,12 +1,14 @@
 package entity.skill.concreteskill;
 
 import entity.skill.AbstractSkill2;
+import lombok.Data;
 
 import java.util.Observable;
 
 /**
  * created by csy on 2019/4/10
  **/
+@Data
 public class GuanYuSkill2 extends AbstractSkill2 {
 
     public GuanYuSkill2(){

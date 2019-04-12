@@ -16,6 +16,7 @@ public class RedGem extends GemDecorator {
         this.defense = 10;
         this.HP = 10;
         this.description = "红宝石";
+        this.money = 50;
     }
 
     public int calculateDefense() {
