@@ -6,6 +6,7 @@ import lombok.Data;
  * @author phoebegl
  * @Date 2019/3/28.
  */
+@Deprecated
 @Data
 public abstract class Monster {
 

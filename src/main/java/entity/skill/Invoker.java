@@ -5,6 +5,7 @@ import java.util.Comparator;
 /**
  * created by csy on 2019/3/30
  **/
+@Deprecated
 public class Invoker {
 
     private Command command;
