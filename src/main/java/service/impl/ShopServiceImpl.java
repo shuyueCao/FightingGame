@@ -93,6 +93,7 @@ public class ShopServiceImpl implements ShopService {
         GemDecorator decorator = null;
         if (gemName.equals("红宝石")) {
             decorator = new RedGem(equipment);
+            System.out.println(decorator.showDescription());
         } else if (gemName.equals("蓝宝石")) {
             decorator = new BlueGem(equipment);
         }

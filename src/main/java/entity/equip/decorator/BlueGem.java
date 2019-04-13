@@ -27,7 +27,7 @@ public class BlueGem extends GemDecorator {
         return equipment.getHP();
     }
 
-    protected String showDescription() {
+    public String showDescription() {
         return equipment.getDescription() + " + " + this.description;
     }
 }

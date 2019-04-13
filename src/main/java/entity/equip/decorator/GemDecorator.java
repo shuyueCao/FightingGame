@@ -11,6 +11,6 @@ import entity.equip.Equipment;
  */
 public abstract class GemDecorator extends Equipment {
 
-    protected abstract String showDescription();
+    public abstract String showDescription();
 
 }
