@@ -16,8 +16,8 @@ public class LiBai extends Role {
 
     public LiBai() {
         this.name = "李白";
-        this.attackValue = 120;
-        this.defendValue = 100;
+        this.attackValue = 8;
+        this.defendValue = 5;
         this.HP = 100;
         this.currentHP = 100;
         this.weapon = new Warblade();

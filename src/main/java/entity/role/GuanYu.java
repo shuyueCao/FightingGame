@@ -16,8 +16,8 @@ public class GuanYu extends Role {
 
     public GuanYu() {
         this.name = "关羽";
-        this.attackValue = 150;
-        this.defendValue = 70;
+        this.attackValue = 6;
+        this.defendValue = 6;
         this.HP = 150;
         this.currentHP = 150;
         this.weapon = new Bow();

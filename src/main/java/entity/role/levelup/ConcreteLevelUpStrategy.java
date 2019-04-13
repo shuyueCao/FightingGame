@@ -12,6 +12,7 @@ public class ConcreteLevelUpStrategy implements LevelUpStrategy {
 
     public void upgrade(Role role, Integer increExp) {
         role.setExperience(role.getExperience() + increExp);
+        role.setCurrentHP(role.getHP());//重置当前血量为满值
 
         //角色属性提升
         while (role.getExperience() >= getNeededExp(role.getLevel())) {

@@ -21,6 +21,8 @@ import java.util.List;
 public class ShopServiceImpl implements ShopService {
 
     private static ShopServiceImpl instance;
+    private static final int ENHANCE_PRICE = 200;
+    private static final int ENHANCE_POWER = 5;
 
     public ShopServiceImpl() {
     }
@@ -91,6 +93,14 @@ public class ShopServiceImpl implements ShopService {
         }
 
         return "金钱不够！";
+    }
+
+    public String enhanceWeapon(Role role) {
+        if (role.getMoney() >= ENHANCE_PRICE){
+            role.getWeapon().enhancePower(ENHANCE_POWER);
+            return "武器已强化一级";
+        }
+        return "金钱不够";
     }
 
     public List<String> getAllWeapons() {

@@ -16,8 +16,8 @@ public class DiaoChan extends Role{
 
     public DiaoChan() {
         this.name = "貂蝉";
-        this.attackValue = 80;
-        this.defendValue = 130;
+        this.attackValue = 8;
+        this.defendValue = 4;
         this.HP = 100;
         this.currentHP = 100;
         this.weapon = new Sword();

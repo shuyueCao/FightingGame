@@ -16,6 +16,8 @@ public interface ShopService {
 
     String buyGem(Role role,Equipment equipment,String gemName);
 
+    String enhanceWeapon(Role role);
+
     List<String> getAllWeapons();
 
     List<String> getAllEquips();

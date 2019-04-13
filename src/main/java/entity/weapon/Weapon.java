@@ -19,6 +19,7 @@ public abstract class Weapon {
 
     public void enhancePower(int power) {
         this.power += power;
+        this.level++;
     }
 
 }

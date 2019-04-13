@@ -8,6 +8,20 @@ import service.InfoService;
  * created by csy on 2019/4/12
  **/
 public class InfoServiceImpl implements InfoService {
+
+    public static InfoServiceImpl instance;
+
+    public InfoServiceImpl() {
+    }
+
+    public static InfoServiceImpl getInstance() {
+        if (instance == null) {
+            return new InfoServiceImpl();
+        }
+        return instance;
+    }
+
+
     public int getAttackValue(Role role) {
         return role.calculateDPS();
     }
