@@ -16,13 +16,11 @@ public class LevelTwoState implements State{
         this.role = role;
     }
 
-    public void unlockSkill2() {
+    public void unlockSkill() {
         role.setSkill2(role.getAbstractSkill2());
         role.addObserver(role.getSkill2());
     }
 
-    public void unlockSkill3() {
-    }
 
 //    public void upgradeAllSkills() {
 //

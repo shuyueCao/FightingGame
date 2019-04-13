@@ -8,12 +8,14 @@ import entity.role.Role;
 public class ConcreteCommand implements Command {
 
     private Role role;
+    private final int extraDPS = 5;
 
     public ConcreteCommand(Role role) {
         this.role = role;
     }
 
     public int execute() {
-        return role.attackBySkill1() + role.attackBySkill2();
+        int dps2 = role.getSkill2() == null ? 0 : role.getSkill2().getDps();
+        return role.getSkill1().getDps() + dps2 + extraDPS;
     }
 }

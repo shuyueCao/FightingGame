@@ -1,5 +1,6 @@
 package entity.skill.concreteskill;
 
+import entity.role.Role;
 import entity.skill.AbstractSkill2;
 import lombok.Data;
 
@@ -19,7 +20,13 @@ public class DiaoChanSkill2 extends AbstractSkill2 {
     }
 
     public void update(Observable o, Object arg) {
+        Role role = (Role) o;
+        if (role.getLevel() % 10 == 0) {
+            this.dps += 10;
+        } else {
+            this.dps += 5;
+        }
         this.level++;
-        this.dps += 5;
+        System.out.println("角色等级为：" + role.getLevel()+",二技能升级");
     }
 }

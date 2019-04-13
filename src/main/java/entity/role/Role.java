@@ -1,14 +1,17 @@
 package entity.role;
 
+import entity.role.levelstate.LevelHighState;
+import entity.role.levelstate.LevelThreeState;
+import entity.role.levelstate.LevelTwoState;
+import entity.role.levelstate.State;
+import entity.skill.*;
 import entity.weapon.Weapon;
 import entity.equip.Equipment;
 import entity.role.levelup.ConcreteLevelUpStrategy;
 import entity.role.levelup.LevelUpStrategy;
-import entity.skill.AbstractSkill1;
-import entity.skill.AbstractSkill2;
-import entity.skill.AbstractSkill3;
 import lombok.Data;
 
+import java.awt.font.TextHitInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -42,11 +45,25 @@ public abstract class Role extends Observable {
     protected AbstractSkill2 abstractSkill2;
     protected AbstractSkill3 abstractSkill3;
 
+    //技能组合
+    protected Command command;
+
     //升级策略
     private LevelUpStrategy levelUpStrategy;
 
-    public Role(){
+    //等级状态
+    private State state;
+    State level2state;
+    State level3state;
+    State levelhighstate;
+
+    public Role() {
         this.levelUpStrategy = new ConcreteLevelUpStrategy();
+        this.level2state = new LevelTwoState(this);
+        this.level3state = new LevelThreeState(this);
+        this.levelhighstate = new LevelHighState(this);
+        this.command = new ConcreteCommand(this);
+
     }
 
 
@@ -68,9 +85,52 @@ public abstract class Role extends Observable {
         return skill3.getDps() + this.calculateDPS();
     }
 
+    public int attackByCommand() {
+        return command.execute() + this.calculateDPS();
+    }
+
+
+    /**
+     * 计算总攻击力：角色攻击力+武器攻击力
+     *
+     * @return
+     */
     public int calculateDPS() {
         int weaponPower = this.weapon == null ? 0 : this.weapon.getPower();
         return this.attackValue + weaponPower;
     }
 
+
+    /**
+     * 计算总防御值：角色防御值+装备防御值
+     *
+     * @return
+     */
+    public int calculateDefense() {
+        int equipDefense = 0;
+        if (equipmentList.size() > 0) {
+            for (Equipment equipment : equipmentList) {
+                equipDefense += equipment.calculateDefense();
+            }
+
+        }
+        return this.defendValue + equipDefense;
+    }
+
+
+    /**
+     * 计算总血量：角色血量+装备血量
+     *
+     * @return
+     */
+    public int calculateHP() {
+        int equipHP = 0;
+        if (equipmentList.size() > 0) {
+            for (Equipment equipment : equipmentList) {
+                equipHP += equipment.calculateHP();
+            }
+
+        }
+        return this.HP + equipHP;
+    }
 }

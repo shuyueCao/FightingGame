@@ -1,5 +1,6 @@
 package entity.skill.concreteskill;
 
+import entity.role.Role;
 import entity.skill.AbstractSkill3;
 import lombok.Data;
 
@@ -19,7 +20,14 @@ public class GuanYuSkill3 extends AbstractSkill3 {
     }
 
     public void update(Observable o, Object arg) {
+        Role role = (Role) o;
+        if (role.getLevel() % 10 == 0) {
+            this.dps += 10;
+        } else {
+            this.dps += 5;
+        }
         this.level++;
-        this.dps += 10;
+        System.out.println("角色等级为：" + role.getLevel()+",三技能升级");
+
     }
 }

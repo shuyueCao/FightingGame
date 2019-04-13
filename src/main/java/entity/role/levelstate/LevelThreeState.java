@@ -13,11 +13,7 @@ public class LevelThreeState implements State {
         this.role = role;
     }
 
-    public void unlockSkill2() {
-
-    }
-
-    public void unlockSkill3() {
+    public void unlockSkill() {
         role.setSkill3(role.getAbstractSkill3());
         role.addObserver(role.getSkill3());
     }

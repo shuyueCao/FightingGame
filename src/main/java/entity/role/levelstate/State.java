@@ -7,14 +7,9 @@ package entity.role.levelstate;
 public interface State {
 
     /**
-     * 解锁技能二
+     * 解锁技能
      */
-    void unlockSkill2();
-
-    /**
-     * 解锁技能三
-     */
-    void unlockSkill3();
+    void unlockSkill();
 
 
 //    /**
