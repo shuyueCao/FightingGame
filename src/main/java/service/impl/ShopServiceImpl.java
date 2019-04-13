@@ -11,7 +11,6 @@ import entity.weapon.*;
 import service.ShopService;
 
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,23 +81,23 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
-    public String buyGem(Role role, String equipName,String gemName) {
+    public String buyGem(Role role, String equipName, String gemName) {
         Equipment equipment = null;
-        if (equipName.equals("反伤刺甲")) {
-            equipment = new Barde();
-        } else if (equipName.equals("红莲斗篷")) {
-            equipment = new Cloak();
+        int index = 0;
+        for (Equipment equip : role.getEquipmentList()) {
+            if (equip.getName().equals(equipName)) {
+                equipment = equip;
+                index = role.getEquipmentList().indexOf(equip);
+            }
         }
-
         GemDecorator decorator = null;
-        if (gemName.equals("红宝石")){
+        if (gemName.equals("红宝石")) {
             decorator = new RedGem(equipment);
-        } else if (gemName.equals("蓝宝石")){
+        } else if (gemName.equals("蓝宝石")) {
             decorator = new BlueGem(equipment);
         }
-        if (decorator.getMoney()<= role.getMoney()){
-            int index = role.getEquipmentList().indexOf(equipment);
-            role.getEquipmentList().set(index,decorator);
+        if (decorator.getMoney() <= role.getMoney()) {
+            role.getEquipmentList().set(index, decorator);
             return "购买成功！";
         }
 
@@ -107,7 +106,7 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     public String enhanceWeapon(Role role) {
-        if (role.getMoney() >= ENHANCE_PRICE){
+        if (role.getMoney() >= ENHANCE_PRICE) {
             role.getWeapon().enhancePower(ENHANCE_POWER);
             role.setMoney(role.getMoney() - ENHANCE_PRICE);
             return "武器已强化一级";
