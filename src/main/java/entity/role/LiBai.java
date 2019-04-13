@@ -20,7 +20,7 @@ public class LiBai extends Role {
         this.defendValue = 5;
         this.HP = 100;
         this.currentHP = 100;
-        this.weapon = new Warblade();
+//        this.weapon = new Warblade();
         this.skill1 = new LiBaiSkill1();
         this.addObserver(skill1);
         this.abstractSkill2 = new LiBaiSkill2();

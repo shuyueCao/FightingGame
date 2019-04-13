@@ -20,7 +20,7 @@ public class GuanYu extends Role {
         this.defendValue = 6;
         this.HP = 150;
         this.currentHP = 150;
-        this.weapon = new Bow();
+//        this.weapon = new Bow();
         this.skill1 = new GuanYuSkill1();
         this.addObserver(skill1);
         this.abstractSkill2 = new GuanYuSkill2();

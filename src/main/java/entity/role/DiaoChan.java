@@ -20,7 +20,7 @@ public class DiaoChan extends Role{
         this.defendValue = 4;
         this.HP = 100;
         this.currentHP = 100;
-        this.weapon = new Sword();
+//        this.weapon = new Sword();
         this.skill1 = new DiaoChanSkill1();
         this.addObserver(skill1);
         this.abstractSkill2 = new DiaoChanSkill2();
