@@ -24,7 +24,7 @@ public class ShopServiceImpl implements ShopService {
     private static final int ENHANCE_PRICE = 200;
     private static final int ENHANCE_POWER = 5;
 
-    public ShopServiceImpl() {
+    private ShopServiceImpl() {
     }
 
     public static ShopServiceImpl getInstance() {
@@ -34,7 +34,7 @@ public class ShopServiceImpl implements ShopService {
         return instance;
     }
 
-
+    @Override
     public String buyWeapon(Role role, String weaponName, boolean change) {
         Weapon weapon = null;
         if (weaponName.equals("暗影战斧")) {
@@ -49,7 +49,8 @@ public class ShopServiceImpl implements ShopService {
         int cur_money = role.getMoney();
         if (weapon.getMoney() <= cur_money) {
             role.setMoney(cur_money - weapon.getMoney());
-            if (role.getWeapon() == null || change) {//还未有武器or是更换武器
+            //还未有武器or是更换武器
+            if (role.getWeapon() == null || change) {
                 role.setWeapon(weapon);
                 return "购买成功!";
             } else if (role.getWeapon() != null && !change) {
@@ -59,6 +60,7 @@ public class ShopServiceImpl implements ShopService {
         return "金钱不够！";
     }
 
+    @Override
     public String buyEquipment(Role role, String equipName) {
         Equipment equipment = null;
         if (equipName.equals("反伤刺甲")) {
@@ -79,7 +81,15 @@ public class ShopServiceImpl implements ShopService {
             return "金钱不够！";
     }
 
-    public String buyGem(Role role, Equipment equipment,String gemName) {
+    @Override
+    public String buyGem(Role role, String equipName,String gemName) {
+        Equipment equipment = null;
+        if (equipName.equals("反伤刺甲")) {
+            equipment = new Barde();
+        } else if (equipName.equals("红莲斗篷")) {
+            equipment = new Cloak();
+        }
+
         GemDecorator decorator = null;
         if (gemName.equals("红宝石")){
             decorator = new RedGem(equipment);
@@ -95,14 +105,17 @@ public class ShopServiceImpl implements ShopService {
         return "金钱不够！";
     }
 
+    @Override
     public String enhanceWeapon(Role role) {
         if (role.getMoney() >= ENHANCE_PRICE){
             role.getWeapon().enhancePower(ENHANCE_POWER);
+            role.setMoney(role.getMoney() - ENHANCE_PRICE);
             return "武器已强化一级";
         }
         return "金钱不够";
     }
 
+    @Override
     public List<String> getAllWeapons() {
         List<String> weapons = new ArrayList<String>();
         weapons.add("暗影战斧");
@@ -112,19 +125,45 @@ public class ShopServiceImpl implements ShopService {
         return weapons;
     }
 
+    @Override
     public List<String> getAllEquips() {
         List<String> equips = new ArrayList<String>();
         equips.add("反伤刺甲");
         equips.add("红莲斗篷");
-//        equips.add("红宝石");
-//        equips.add("蓝宝石");
         return equips;
     }
 
+    @Override
     public List<String> getAllGems() {
         List<String> gems = new ArrayList<String>();
         gems.add("红宝石");
         gems.add("蓝宝石");
         return gems;
+    }
+
+    @Override
+    public String getWeaponInfo(String name) {
+        if (name.equals("暗影战斧")) {
+            return new Axe().getIntroduction();
+        } else if (name.equals("穿云弓")) {
+            return new Bow().getIntroduction();
+        } else if (name.equals("匕首")) {
+            return new Sword().getIntroduction();
+        } else if (name.equals("无尽战刃")) {
+            return new Warblade().getIntroduction();
+        } else {
+            return "";
+        }
+    }
+
+    @Override
+    public String getEquipInfo(String name) {
+        if (name.equals("反伤刺甲")) {
+            return new Barde().getIntroduction();
+        } else if (name.equals("红莲斗篷")) {
+            return new Cloak().getIntroduction();
+        } else {
+            return "";
+        }
     }
 }

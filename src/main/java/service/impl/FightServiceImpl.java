@@ -12,7 +12,7 @@ public class FightServiceImpl implements FightService {
 
     public static FightServiceImpl instance;
 
-    public FightServiceImpl() {
+    private FightServiceImpl() {
     }
 
     public static FightServiceImpl getInstance() {

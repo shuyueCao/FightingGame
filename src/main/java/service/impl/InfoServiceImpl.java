@@ -11,7 +11,7 @@ public class InfoServiceImpl implements InfoService {
 
     public static InfoServiceImpl instance;
 
-    public InfoServiceImpl() {
+    private InfoServiceImpl() {
     }
 
     public static InfoServiceImpl getInstance() {

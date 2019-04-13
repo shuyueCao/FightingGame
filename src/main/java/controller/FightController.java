@@ -24,6 +24,7 @@ public class FightController implements Initializable {
         stage.get(0).setScene(scene);
     }
 
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }

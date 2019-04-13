@@ -1,42 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfoController">
    <children>
-      <Label id="name" fx:id="name" layoutX="60.0" layoutY="20.0" text="角色名">
+      <Label fx:id="name" layoutX="51.0" layoutY="37.0" text="角色名">
          <font>
             <Font size="18.0" />
-         </font></Label>
-      <Label layoutX="60.0" layoutY="81.0" text="武器" />
-      <Label layoutX="60.0" layoutY="172.0" text="装备" />
-      <Label layoutX="60.0" layoutY="260.0" text="技能" />
-      <Button id="weapon_shop" layoutX="395.0" layoutY="81.0" mnemonicParsing="false" text="去商店" onAction="#handleShop"/>
-      <Button layoutX="501.0" layoutY="171.0" mnemonicParsing="false" text="升级" />
-      <Button layoutX="501.0" layoutY="80.0" mnemonicParsing="false" text="升级" />
-      <Button fx:id="equip_shop" layoutX="395.0" layoutY="172.0" mnemonicParsing="false" text="去商店" onAction="#handleShop"/>
-      <TableView id="weapons" layoutX="114.0" layoutY="81.0" prefHeight="81.0" prefWidth="260.0">
-        <columns>
-          <TableColumn id="w_name" prefWidth="109.0" text="名称" />
-          <TableColumn id="w_description" prefWidth="150.0" text="描述" />
-        </columns>
-      </TableView>
-      <TableView id="equips" layoutX="114.0" layoutY="172.0" prefHeight="81.0" prefWidth="260.0">
-         <columns>
-            <TableColumn id="e_name" prefWidth="109.0" text="名称" />
-            <TableColumn id="e_description" prefWidth="150.0" text="描述" />
-         </columns>
-      </TableView>
-      <TableView id="skills" layoutX="114.0" layoutY="260.0" prefHeight="81.0" prefWidth="260.0">
-         <columns>
-            <TableColumn id="s_name" prefWidth="109.0" text="名称" />
-            <TableColumn id="s_description" prefWidth="150.0" text="描述" />
-         </columns>
-      </TableView>
-      <Button id="fight" layoutX="174.0" layoutY="367.0" mnemonicParsing="false" onAction="#handleStartFight" text="进入战斗" />
-      <Button id="fight" layoutX="349.0" layoutY="367.0" mnemonicParsing="false" onAction="#handleExit" text="退出游戏" />
+         </font>
+      </Label>
+      <VBox layoutX="51.0" layoutY="82.0" prefHeight="300.0" prefWidth="100.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label prefWidth="50.0" text="等级:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="level" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label prefWidth="50.0" text="攻击:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="attack" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label prefWidth="50.0" text="防御:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="defence" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label prefWidth="50.0" text="血量:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="hp" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label prefWidth="50.0" text="经验:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="experience" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label prefWidth="50.0" text="金钱:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="money" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="215.0" layoutY="82.0" prefHeight="300.0" prefWidth="400.0">
+         <children>
+            <HBox prefHeight="45.0" prefWidth="400.0">
+               <children>
+                  <Label prefWidth="50.0" text="武器:" />
+                  <Label id="weapon" fx:id="weapon" prefWidth="100.0" />
+                  <Button id="show_info" mnemonicParsing="false" onAction="#handleShow" text="查看简介" />
+                  <Button id="upgrade_weapon" mnemonicParsing="false" onAction="#handleUpdateWeapon" text="升级">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="125.0" prefWidth="400.0">
+               <children>
+                  <Label prefWidth="50.0" text="装备:" />
+                  <ListView fx:id="equipList" onMouseClicked="#handleEquipShow" prefHeight="125.0" prefWidth="350.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="125.0" prefWidth="400.0">
+               <children>
+                  <Label prefWidth="50.0" text="技能:" />
+                  <ListView fx:id="skillList" prefHeight="125.0" prefWidth="350.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </ListView>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="90.0" layoutY="400.0" prefHeight="100.0" prefWidth="500.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="420.0">
+               <children>
+                  <Button id="weapon_shop" mnemonicParsing="false" onAction="#handleShop" text="去商店">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="fight" mnemonicParsing="false" onAction="#handleStartFight" text="进入战斗">
+                     <HBox.margin>
+                        <Insets left="110.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="fight" mnemonicParsing="false" onAction="#handleExit" text="退出游戏">
+                     <HBox.margin>
+                        <Insets left="110.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Label fx:id="info" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

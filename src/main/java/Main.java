@@ -21,8 +21,8 @@ public class Main extends Application {
         AnchorPane root = fxmlLoader.loadPanel("start.fxml");
 
         stage.setTitle("战斗成长游戏");
-        stage.setWidth(1080);
-        stage.setHeight(760);
+        stage.setWidth(680);
+        stage.setHeight(510);
         Scene scene = new Scene(root);
 
         stage.setScene(scene);

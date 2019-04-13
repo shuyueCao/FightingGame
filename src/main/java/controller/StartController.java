@@ -27,6 +27,7 @@ public class StartController implements Initializable {
 
     private RoleService roleService;
 
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
         roleService = RoleServiceImpl.getInstance();
         roles.setItems(FXCollections.observableArrayList(roleService.getAllRoles()));

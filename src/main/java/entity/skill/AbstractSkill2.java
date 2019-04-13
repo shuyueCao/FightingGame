@@ -15,4 +15,7 @@ public abstract class AbstractSkill2 implements Observer{
     protected int level;
     protected int dps;
 
+    public String getIntroduction() {
+        return getName() + ": " + getDescription();
+    }
 }

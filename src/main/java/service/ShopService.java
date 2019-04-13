@@ -1,6 +1,5 @@
 package service;
 
-import entity.equip.Equipment;
 import entity.role.Role;
 
 import java.util.List;
@@ -14,7 +13,7 @@ public interface ShopService {
 
     String buyEquipment(Role role,String equipName);
 
-    String buyGem(Role role,Equipment equipment,String gemName);
+    String buyGem(Role role,String equipName,String gemName);
 
     String enhanceWeapon(Role role);
 
@@ -24,4 +23,7 @@ public interface ShopService {
 
     List<String> getAllGems();
 
+    String getWeaponInfo(String name);
+
+    String getEquipInfo(String name);
 }

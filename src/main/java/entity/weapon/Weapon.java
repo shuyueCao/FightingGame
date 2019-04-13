@@ -22,4 +22,11 @@ public abstract class Weapon {
         this.level++;
     }
 
+    public String getBriefDescription() {
+        return "等级为"+getLevel()+"级, 攻击力为"+getPower();
+    }
+
+    public String getIntroduction() {
+        return getDescription() + "。攻击力为" + getPower() + "。价格为" + getMoney() + "元";
+    }
 }

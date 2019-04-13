@@ -1,40 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShopController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShopController">
    <children>
-      <TabPane layoutX="82.0" layoutY="73.0" prefHeight="235.0" prefWidth="454.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="武器">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <ListView layoutY="1.0" prefHeight="202.0" prefWidth="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="装备">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <ListView layoutX="74.0" layoutY="-12.0" prefHeight="202.0" prefWidth="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
-      <Button layoutX="174.0" layoutY="330.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="90.0" text="购买" />
-      <Button id="back" layoutX="353.0" layoutY="330.0" mnemonicParsing="false" prefHeight="27.0" onAction="#handleBack" prefWidth="90.0" text="返回" />
-      <Label layoutX="264.0" layoutY="26.0" text="商店">
+      <Label layoutX="320.0" layoutY="26.0" text="商店">
          <font>
-            <Font size="21.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
+      <TabPane layoutX="85.0" layoutY="73.0" prefHeight="280.0" prefWidth="510.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="w" text="武器">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="weaponList" layoutY="1.0" onMouseClicked="#handleChooseWeapon" prefHeight="202.0" prefWidth="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="e" text="装备">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="equipList" layoutX="74.0" layoutY="-12.0" onMouseClicked="#handleChooseEquip" prefHeight="202.0" prefWidth="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="g" text="宝石">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="247.0" prefWidth="510.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ListView fx:id="gemList" onMouseClicked="#handleChooseGem" prefHeight="215.0" prefWidth="509.0" />
+                              <HBox prefHeight="64.0" prefWidth="509.0">
+                                 <children>
+                                    <Label text="请选择要加成的装备:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="roleEquips" prefHeight="27.0" prefWidth="205.0">
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                    </ChoiceBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <HBox layoutX="190.0" layoutY="380.0" prefHeight="50.0" prefWidth="300.0">
+         <children>
+            <Button fx:id="buy" mnemonicParsing="false" onMouseClicked="#handleBuy" prefHeight="27.0" prefWidth="90.0" text="购买" />
+            <Button id="back" mnemonicParsing="false" onAction="#handleBack" prefHeight="27.0" prefWidth="90.0" text="返回">
+               <HBox.margin>
+                  <Insets left="120.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox layoutX="80.0" layoutY="415.0" prefHeight="50.0" prefWidth="520.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="520.0">
+               <children>
+                  <Label prefWidth="50.0" text="金钱:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="money" prefWidth="80.0" />
+               </children>
+            </HBox>
+            <Label fx:id="info" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

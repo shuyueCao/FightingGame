@@ -17,4 +17,7 @@ public abstract class AbstractSkill1 implements Observer{
 
 //    public abstract int calculateDPS();
 
+    public String getIntroduction() {
+        return getName() + ": " + getDescription();
+    }
 }
