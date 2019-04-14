@@ -54,7 +54,7 @@
 
 **采用`*观察者模式*`实现，当怪物血量为0时，自动触发角色的相关属性的修改**
 
-![icon](https://coding.net/u/phoebegl74/p/git_resource/git/raw/master/blog/pic.png)
+![icon][https://coding.net/u/phoebegl74/p/git_resource/git/raw/master/blog/pic.png]
 
 ##### 实现效果
 实现了打怪胜利后角色相关属性的自动修改。
@@ -187,4 +187,3 @@
 #### 实现结果
 
 与设计相同
-
