@@ -10,7 +10,4 @@ import entity.equip.Equipment;
  * 装备镶嵌宝石改变属性值，采用装饰者模式
  */
 public abstract class GemDecorator extends Equipment {
-
-    public abstract String showDescription();
-
 }

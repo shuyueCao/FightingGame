@@ -29,6 +29,12 @@ public abstract class Equipment {
 
     public String getIntroduction() {
         return getDescription() + "。防御值为" + calculateDefense()
+                + "。可增加血量" + calculateHP();
+    }
+
+    public String getShopIntroduction() {
+        return getDescription() + "。防御值为" + calculateDefense()
                 + "。可增加血量" + calculateHP() + "。价格为" + getMoney() + "元";
     }
+
 }

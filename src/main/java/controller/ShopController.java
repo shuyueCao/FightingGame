@@ -111,7 +111,10 @@ public class ShopController implements Initializable{
             if (selectWeapon == null || selectWeapon.equals("")) {
                 info.setText("您尚未选择武器");
             } else {
-                boolean change = !(selectWeapon.equals(currentRole.getWeapon().getName()));
+                boolean change = true;
+                if (currentRole.getWeapon() != null) {
+                    change = !(selectWeapon.equals(currentRole.getWeapon().getName()));
+                }
                 info.setText(shopService.buyWeapon(currentRole, selectWeapon, change));
             }
         } else if (e.isSelected()) {
@@ -134,7 +137,7 @@ public class ShopController implements Initializable{
             }
         }
 
-        //更新角色的金钱值
-        money.setText(String.valueOf(currentRole.getMoney()));
+        //更新
+        initial();
     }
 }

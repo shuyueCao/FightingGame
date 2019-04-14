@@ -77,7 +77,9 @@ public class InfoController implements Initializable {
         experience.setText(String.valueOf(currentRole.getExperience()));
         hp.setText(String.valueOf(currentRole.calculateHP()));
 
-        weapon.setText(currentRole.getWeapon().getName());
+        if (currentRole.getWeapon() != null) {
+            weapon.setText(currentRole.getWeapon().getName());
+        }
         initialEquips();
         initialSkills();
     }
@@ -120,14 +122,18 @@ public class InfoController implements Initializable {
 
     @FXML
     public void handleShow() {
-        info.setText(currentRole.getWeapon().getBriefDescription());
+        if (currentRole.getWeapon() != null) {
+            info.setText(currentRole.getWeapon().getBriefDescription());
+        }
     }
 
     @FXML
     public void handleUpdateWeapon() {
-        String result = shopService.enhanceWeapon(currentRole);
-        info.setText(result);
-        initial();
+        if (currentRole.getWeapon() != null) {
+            String result = shopService.enhanceWeapon(currentRole);
+            info.setText(result);
+            initial();
+        }
     }
 
     @FXML
@@ -139,8 +145,7 @@ public class InfoController implements Initializable {
 
     @FXML
     public void handleEquipShow() {
-        String name = String.valueOf(equipList.getSelectionModel().getSelectedItem());
-        info.setText(shopService.getEquipInfo(name));
+        int index = equipList.getSelectionModel().getSelectedIndex();
+        info.setText(currentRole.getEquipmentList().get(index).getIntroduction());
     }
-
 }

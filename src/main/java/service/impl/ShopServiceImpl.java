@@ -4,12 +4,10 @@ import entity.equip.Barde;
 import entity.equip.Cloak;
 import entity.equip.Equipment;
 import entity.equip.decorator.BlueGem;
-import entity.equip.decorator.GemDecorator;
 import entity.equip.decorator.RedGem;
 import entity.role.Role;
 import entity.weapon.*;
 import service.ShopService;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,15 +88,15 @@ public class ShopServiceImpl implements ShopService {
                 index = role.getEquipmentList().indexOf(equip);
             }
         }
-        GemDecorator decorator = null;
+        Equipment decorator = null;
         if (gemName.equals("红宝石")) {
             decorator = new RedGem(equipment);
-            System.out.println(decorator.showDescription());
         } else if (gemName.equals("蓝宝石")) {
             decorator = new BlueGem(equipment);
         }
         if (decorator.getMoney() <= role.getMoney()) {
             role.getEquipmentList().set(index, decorator);
+            role.setMoney(role.getMoney() - decorator.getMoney());
             return "购买成功！";
         }
 
@@ -159,9 +157,9 @@ public class ShopServiceImpl implements ShopService {
     @Override
     public String getEquipInfo(String name) {
         if (name.equals("反伤刺甲")) {
-            return new Barde().getIntroduction();
+            return new Barde().getShopIntroduction();
         } else if (name.equals("红莲斗篷")) {
-            return new Cloak().getIntroduction();
+            return new Cloak().getShopIntroduction();
         } else {
             return "";
         }

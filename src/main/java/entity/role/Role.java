@@ -1,17 +1,16 @@
 package entity.role;
 
+import entity.equip.Equipment;
 import entity.role.levelstate.LevelHighState;
 import entity.role.levelstate.LevelThreeState;
 import entity.role.levelstate.LevelTwoState;
 import entity.role.levelstate.State;
-import entity.skill.*;
-import entity.weapon.Weapon;
-import entity.equip.Equipment;
 import entity.role.levelup.ConcreteLevelUpStrategy;
 import entity.role.levelup.LevelUpStrategy;
+import entity.skill.*;
+import entity.weapon.Weapon;
 import lombok.Data;
 
-import java.awt.font.TextHitInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -35,7 +34,7 @@ public abstract class Role extends Observable {
     //只可携带一件武器
     protected Weapon weapon;
     //最多携带3件装备
-    protected List<Equipment> equipmentList = new ArrayList<Equipment>();
+    protected List<Equipment> equipmentList = new ArrayList<>();
     //三个技能
     protected AbstractSkill1 skill1;
     protected AbstractSkill2 skill2;
