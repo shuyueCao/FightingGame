@@ -92,7 +92,9 @@ public class FightController implements Initializable {
         r_defence.setText(String.valueOf(currentRole.calculateDefense()));
         r_chp.setText(String.valueOf(currentRole.getCurrentHP()));
         r_hp.setText(String.valueOf(currentRole.calculateHP()));
-        r_weapon.setText(currentRole.getWeapon().getName());
+        if (currentRole.getWeapon() != null) {
+            r_weapon.setText(currentRole.getWeapon().getName());
+        }
 
         if (currentRole.getSkill2() != null) {
             skill2.setDisable(false);

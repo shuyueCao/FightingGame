@@ -1,7 +1,8 @@
 package service.impl;
 
 
-import entity.monster.*;
+import entity.monster.Monster;
+import entity.monster.factory.*;
 import entity.role.Role;
 import service.FightService;
 
@@ -25,15 +26,18 @@ public class FightServiceImpl implements FightService {
 
     @Override
     public Monster createMonster(Role role, int times) {
+        MonsterFactory factory = null;
         if(times == 0) {
-            return new Bird(role);
+            factory = new BirdFactory();
         } else if(times == 1) {
-            return new Pig(role);
+            factory = new PigFactory();
         } else if(times == 2) {
-            return new Snake(role);
+            factory = new SnakeFactory();
         } else {
-            return new Dragon(role);
+            factory = new DragonFactory();
         }
+
+        return factory.getMonster(role);
     }
 
     /**
