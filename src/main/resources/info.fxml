@@ -133,7 +133,7 @@
                   </Button>
                </children>
             </HBox>
-            <Label fx:id="info" />
+            <Label fx:id="info" wrapText="true" />
          </children>
       </VBox>
    </children>

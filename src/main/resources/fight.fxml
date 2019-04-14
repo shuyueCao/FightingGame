@@ -200,7 +200,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Button>
-                              <Button fx:id="combination" mnemonicParsing="false" onAction="#handleCombination" prefWidth="100.0" text="技能组合攻击">
+                              <Button fx:id="combination" disable="true" mnemonicParsing="false" onAction="#handleCombination" prefWidth="100.0" text="技能组合攻击">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>

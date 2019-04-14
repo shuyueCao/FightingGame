@@ -56,6 +56,8 @@ public class FightController implements Initializable {
     private Button skill2;
     @FXML
     private Button skill3;
+    @FXML
+    private Button combination;
 
     @FXML
     private TextArea info;
@@ -98,6 +100,7 @@ public class FightController implements Initializable {
 
         if (currentRole.getSkill2() != null) {
             skill2.setDisable(false);
+            combination.setDisable(false);
         }
         if (currentRole.getSkill3() != null) {
             skill3.setDisable(false);
