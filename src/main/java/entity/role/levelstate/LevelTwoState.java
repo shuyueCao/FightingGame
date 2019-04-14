@@ -2,6 +2,7 @@ package entity.role.levelstate;
 
 
 import entity.role.Role;
+import entity.skill.ConcreteCommand;
 
 /**
  * 具体状态类-二级
@@ -18,6 +19,7 @@ public class LevelTwoState implements State{
 
     public void unlockSkill() {
         role.setSkill2(role.getAbstractSkill2());
+        role.setCommand(new ConcreteCommand(role));
         role.addObserver(role.getSkill2());
     }
 

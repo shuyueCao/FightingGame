@@ -62,7 +62,7 @@ public abstract class Role extends Observable {
         this.level2state = new LevelTwoState(this);
         this.level3state = new LevelThreeState(this);
         this.levelhighstate = new LevelHighState(this);
-        this.command = new ConcreteCommand(this);
+//        this.command = new ConcreteCommand(this);
 
     }
 

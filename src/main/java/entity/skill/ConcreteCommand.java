@@ -16,6 +16,8 @@ public class ConcreteCommand implements Command {
 
     public int execute() {
         int dps2 = role.getSkill2() == null ? 0 : role.getSkill2().getDps();
+//        if (dps2 == 0)
+//            return role.getSkill1().getDps();
         return role.getSkill1().getDps() + dps2 + extraDPS;
     }
 }

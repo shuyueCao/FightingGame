@@ -35,6 +35,6 @@ public class RedGem extends GemDecorator {
 
     @Override
     public String getIntroduction() {
-        return equipment.getIntroduction() + " + " + this.description;
+        return equipment.getIntroduction() + "。镶嵌" + this.description;
     }
 }
