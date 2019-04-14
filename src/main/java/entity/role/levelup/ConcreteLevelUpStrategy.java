@@ -10,9 +10,11 @@ import entity.role.levelstate.LevelThreeState;
  */
 public class ConcreteLevelUpStrategy implements LevelUpStrategy {
 
+    @Override
     public void upgrade(Role role, Integer increExp) {
         role.setExperience(role.getExperience() + increExp);
-        role.setCurrentHP(role.getHP());//重置当前血量为满值
+        //重置当前血量为满值
+        role.setCurrentHP(role.getHP());
 
         //角色属性提升
         while (role.getExperience() >= getNeededExp(role.getLevel())) {

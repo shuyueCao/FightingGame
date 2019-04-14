@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -7,7 +9,237 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FightController">
    <children>
-      <Button id="continue" layoutX="174.0" layoutY="367.0" mnemonicParsing="false" text="继续战斗" />
-      <Button id="quit" layoutX="349.0" layoutY="367.0" mnemonicParsing="false" onAction="#handleQuit" text="退出战斗" />
+      <VBox layoutX="55.0" layoutY="50.0" prefHeight="410.0" prefWidth="280.0">
+         <children>
+            <VBox prefHeight="104.0" prefWidth="280.0">
+               <children>
+                  <Label prefHeight="26.0" text="怪物信息">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="26.0" prefWidth="280.0">
+                     <children>
+                        <Label prefWidth="100.0" text="怪物名:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="m_name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="26.0" prefWidth="280.0">
+                     <children>
+                        <Label prefWidth="100.0" text="攻击值:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="m_attack">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="26.0" prefWidth="280.0">
+                     <children>
+                        <Label prefWidth="100.0" text="当前血量:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="m_hp">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Line endX="280.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="306.0" prefWidth="280.0">
+               <children>
+                  <Label prefHeight="30.0" text="角色信息">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="30.0" prefWidth="280.0">
+                     <children>
+                        <Label prefWidth="100.0" text="角色名:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r_name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="280.0">
+                     <children>
+                        <Label prefWidth="100.0" text="等级/经验值:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r_level">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="/" />
+                        <Label fx:id="r_exp">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="280.0">
+                     <children>
+                        <Label prefWidth="100.0" text="金钱:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r_money">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="280.0">
+                     <children>
+                        <Label prefWidth="100.0" text="攻击力:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r_attack">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="280.0">
+                     <children>
+                        <Label prefWidth="100.0" text="防御力:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r_defence">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="280.0">
+                     <children>
+                        <Label prefWidth="100.0" text="血量:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r_chp" textAlignment="RIGHT">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="/" />
+                        <Label fx:id="r_hp">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="280.0">
+                     <children>
+                        <Label prefWidth="100.0" text="武器:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r_weapon">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="66.0" prefWidth="280.0">
+                     <children>
+                        <HBox prefHeight="33.0" prefWidth="280.0">
+                           <children>
+                              <Button fx:id="simple" mnemonicParsing="false" onAction="#handleSimple" prefWidth="100.0" text="简单攻击" />
+                              <Button fx:id="skill1" mnemonicParsing="false" onAction="#handleSkill1" prefWidth="100.0" text="技能1攻击">
+                                 <HBox.margin>
+                                    <Insets left="40.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="33.0" prefWidth="280.0">
+                           <children>
+                              <Button fx:id="skill2" disable="true" mnemonicParsing="false" onAction="#handleSkill2" prefWidth="90.0" text="技能2攻击" />
+                              <Button fx:id="skill3" disable="true" mnemonicParsing="false" onAction="#handleSkill3" prefWidth="90.0" text="技能3攻击">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="combination" mnemonicParsing="false" onAction="#handleCombination" prefWidth="100.0" text="技能组合攻击">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox layoutX="345.0" layoutY="50.0" prefHeight="410.0" prefWidth="280.0">
+         <children>
+            <TextArea fx:id="info" prefHeight="350.0" prefWidth="280.0" />
+            <HBox prefHeight="40.0" prefWidth="280.0">
+               <children>
+                  <Button id="continue" mnemonicParsing="false" onAction="#handleContinue" text="继续战斗">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="quit" mnemonicParsing="false" onAction="#handleQuit" text="退出战斗">
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

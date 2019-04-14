@@ -3,7 +3,6 @@ package entity.role;
 import entity.skill.concreteskill.LiBaiSkill1;
 import entity.skill.concreteskill.LiBaiSkill2;
 import entity.skill.concreteskill.LiBaiSkill3;
-import entity.weapon.Warblade;
 import lombok.Data;
 
 /**
@@ -19,7 +18,7 @@ public class LiBai extends Role {
         this.attackValue = 8;
         this.defendValue = 5;
         this.HP = 100;
-        this.currentHP = 100;
+        this.currentHP = this.HP;
 //        this.weapon = new Warblade();
         this.skill1 = new LiBaiSkill1();
         this.addObserver(skill1);

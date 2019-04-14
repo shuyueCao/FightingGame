@@ -8,15 +8,15 @@ import entity.role.Role;
  **/
 public interface FightService {
 
-    Role attack(Role role, Monster monster);
+    Monster createMonster(Role role, int times);
 
-    Role attackBySkill1(Role role, Monster monster);
+    String attack(Role role, Monster monster);
 
-    Role attackBySkill2(Role role, Monster monster);
+    String attackBySkill1(Role role, Monster monster);
 
-    Role attackBySkill3(Role role, Monster monster);
+    String attackBySkill2(Role role, Monster monster);
 
-    Role attackByCombination(Role role, Monster monster);
+    String attackBySkill3(Role role, Monster monster);
 
-    Role monsterAttack(Role role, Monster monster);
+    String attackByCombination(Role role, Monster monster);
 }

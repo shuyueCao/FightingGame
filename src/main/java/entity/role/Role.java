@@ -1,6 +1,7 @@
 package entity.role;
 
 import entity.equip.Equipment;
+import entity.monster.Monster;
 import entity.role.levelstate.LevelHighState;
 import entity.role.levelstate.LevelThreeState;
 import entity.role.levelstate.LevelTwoState;
@@ -131,5 +132,10 @@ public abstract class Role extends Observable {
 
         }
         return this.HP + equipHP;
+    }
+
+    public void update(Monster monster) {
+        this.setMoney(this.getMoney() + monster.getEarnMoney());
+        levelUpStrategy.upgrade(this, monster.getEarnExp());
     }
 }

@@ -4,6 +4,7 @@
  */
 package entity.monster;
 
+import entity.role.Role;
 import lombok.Data;
 
 @Data
@@ -14,5 +15,9 @@ public abstract class Monster {
 	protected Integer earnExp;
 	protected Integer earnMoney;
 
+	protected Role role;
 
+	public void notifyRole() {
+		role.update(this);
+	}
 }

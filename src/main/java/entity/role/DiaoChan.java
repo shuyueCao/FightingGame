@@ -3,7 +3,6 @@ package entity.role;
 import entity.skill.concreteskill.DiaoChanSkill1;
 import entity.skill.concreteskill.DiaoChanSkill2;
 import entity.skill.concreteskill.DiaoChanSkill3;
-import entity.weapon.Sword;
 import lombok.Data;
 
 /**
@@ -19,7 +18,7 @@ public class DiaoChan extends Role{
         this.attackValue = 8;
         this.defendValue = 4;
         this.HP = 100;
-        this.currentHP = 100;
+        this.currentHP = this.HP;
 //        this.weapon = new Sword();
         this.skill1 = new DiaoChanSkill1();
         this.addObserver(skill1);
